@@ -1,16 +1,93 @@
-# React + Vite
+# Context API & Redux Toolkit – Authentication and Products Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is a React application that demonstrates state management using **Context API** and **Redux Toolkit**.  
+The authentication logic is handled using Context API, while product and cart state management are implemented using Redux Toolkit.
 
-Currently, two official plugins are available:
+This project is created as part of a Full Stack Development / React experiment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Authentication Module (Context API)
+- Login and Logout functionality
+- Stores authentication state (`isLoggedIn`)
+- Stores current user name, role, and token
+- Provides authentication data globally using Context API
 
-## Expanding the ESLint configuration
+### Product Module (Redux Toolkit)
+- Add products (Admin only)
+- Remove products (Admin only)
+- Display product list dynamically
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Cart Module (Redux Toolkit)
+- Add products to cart (User only)
+- View cart items
+
+### Role-Based Access Control
+- **Admin**:
+  - Can add products with custom names
+  - Can delete products
+- **User**:
+  - Can view products
+  - Can add products to cart
+- UI updates dynamically based on the user role stored in AuthContext
+
+---
+
+## Technologies Used
+- React
+- Vite
+- JavaScript
+- Context API
+- Redux Toolkit
+- CSS
+
+---
+
+## Project Structure
+
+
+
+src/
+├── components/
+│ ├── Login.jsx
+│ ├── ProductList.jsx
+│ └── Cart.jsx
+├── context/
+│ └── AuthContext.jsx
+├── redux/
+│ ├── store.js
+│ ├── productsSlice.js
+│ └── cartSlice.js
+├── App.jsx
+├── main.jsx
+└── index.css
+
+
+
+
+
+---
+
+
+---
+
+## How to Run the Project Locally
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Prateeeeek423/context-redux-auth-products.git
+Navigate into the project directory:
+
+cd context-redux-auth-products
+Install required dependencies:
+
+npm install
+Start the development server:
+
+npm run dev
+Open the browser and visit:
+
+http://localhost:5173
