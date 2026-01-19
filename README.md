@@ -48,19 +48,18 @@ This project is created as part of a Full Stack Development / React experiment.
 
 ## Project Structure
 
-
-
+```text
 src/
 ├── components/
-│ ├── Login.jsx
-│ ├── ProductList.jsx
-│ └── Cart.jsx
+│   ├── Login.jsx
+│   ├── ProductList.jsx
+│   └── Cart.jsx
 ├── context/
-│ └── AuthContext.jsx
+│   └── AuthContext.jsx
 ├── redux/
-│ ├── store.js
-│ ├── productsSlice.js
-│ └── cartSlice.js
+│   ├── store.js
+│   ├── productsSlice.js
+│   └── cartSlice.js
 ├── App.jsx
 ├── main.jsx
 └── index.css
