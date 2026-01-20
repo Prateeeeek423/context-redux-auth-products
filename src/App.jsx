@@ -10,8 +10,11 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Welcome {userName}</h1>
-      <button onClick={logout}>Logout</button>
+      <h1>Welcome, {userName}</h1>
+      <button className="logout" onClick={logout}>
+        Logout
+      </button>
+
       <ProductList />
       <Cart />
     </div>

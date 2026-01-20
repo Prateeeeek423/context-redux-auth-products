@@ -8,7 +8,6 @@ const ProductList = () => {
   const products = useSelector(state => state.products);
   const dispatch = useDispatch();
   const { role } = useAuth();
-
   const [productName, setProductName] = useState("");
 
   const addNewProduct = () => {
@@ -25,32 +24,43 @@ const ProductList = () => {
   };
 
   return (
-    <div>
+    <div className="section">
       <h2>Products</h2>
 
       {role === "admin" && (
-        <div>
+        <>
           <input
-            placeholder="Product name"
+            placeholder="Enter product name"
             value={productName}
             onChange={e => setProductName(e.target.value)}
           />
-          <button onClick={addNewProduct}>Add Product</button>
-        </div>
+          <button onClick={addNewProduct}>
+            Add Product
+          </button>
+        </>
       )}
+
+      {products.length === 0 && <p>No products available</p>}
 
       {products.map(p => (
         <div className="card" key={p.id}>
           <span>{p.name}</span>
           <div>
             {role === "admin" && (
-              <button onClick={() => dispatch(removeProduct(p.id))}>
+              <button
+                className="secondary"
+                onClick={() => dispatch(removeProduct(p.id))}
+              >
                 Delete
               </button>
             )}
+
             {role === "user" && (
-              <button onClick={() => dispatch(addToCart(p))}>
-                Add
+              <button
+                className="secondary"
+                onClick={() => dispatch(addToCart(p))}
+              >
+                Add to Cart
               </button>
             )}
           </div>

@@ -8,18 +8,23 @@ const Login = () => {
 
   return (
     <div className="container">
-      <h2>Login</h2>
+      <h1>Login</h1>
+
       <input
-        placeholder="Username"
+        type="text"
+        placeholder="Enter username"
+        value={name}
         onChange={e => setName(e.target.value)}
       />
-      <br />
-      <select onChange={e => setRole(e.target.value)}>
+
+      <select value={role} onChange={e => setRole(e.target.value)}>
         <option value="user">User</option>
         <option value="admin">Admin</option>
       </select>
-      <br />
-      <button onClick={() => login(name, role)}>Login</button>
+
+      <button onClick={() => login(name, role)}>
+        Login
+      </button>
     </div>
   );
 };
